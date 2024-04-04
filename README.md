@@ -1,10 +1,27 @@
 # Petit Prince: Journey Back Home
 
-A simple race-to-the-end game inspired by the Little Price, in french *Le Petit Prince*, from Antoine de Saint-Exupéry.
+### Video Demo: <url>
 
-User plays as the Little Prince.
-User starts in the desert, where (spoiler) the Little Prince decides to go back on his asteroid, for his rose.
-Flying up in the sky and eventually travelling the Universe, but this time the journey is reversed.
-Little Prince will get to meet his previous encounters again and perhaps, new ones too.
+### Game Description:
 
-### Embark on this journey through the stars with the Little Prince! 
+A simple race-to-the-end game inspired by the Little Prince, in french *Le Petit Prince*, from Antoine de Saint-Exupéry.
+
+User plays as the Little Prince. <br>
+The game starts in the desert, where the Little Prince decides to go back on his asteroid, for his rose. <br>
+Flying up in the sky and eventually travelling the Universe once again, but this time in reversed. <br>
+Little Prince will get to meet his previous encounters again! <br>
+Clouds and stars can help Little Prince travel faster but he should be careful of birds, satellites and asteroids on his way back.
+
+### Files Description:
+- main.lua: this is the main file
+- entity.lua: this is a file for all entities (Little Prince, birds, clouds, satellites, stars, asteroids)  for the similar behaviors they share.
+- petitprince.lua: this is a file for the little prince.
+- obstacle.lua: this is a file for all obstacles, entities to avoid (birds, satellites, asteroids)
+- boost.lua: this is a file for all boosts, entities to collect (clouds, stars)
+
+### Design Debates:
+1. For Little Prince design: when flying, arms up or down?
+   - Up = looks better, a bit more complicated for design.
+   - Down = looks a bit weird, easier for design.
+   Decided to do arms up since the design can be done fast enough.
+2. 
