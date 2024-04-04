@@ -26,10 +26,11 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
    
    Decided to do arms up since the design can be done fast enough.
 2. For my game title: keep Petit Prince or change to Little Prince?
+
    Decided to keep Petit Prince for a french touch since I'm french.
 
 ### Sources:
-- petitprince.png: *inspired by RGZNSK on Behance*
+- petitprince(1 & 2).png: *inspired by RGZNSK on Behance and Ben Maden on Matter Solutions, made by me on pixilart.com*
 - bird.png:
 - cloud.png:
 - satellite.png:
