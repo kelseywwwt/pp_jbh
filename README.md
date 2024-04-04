@@ -23,5 +23,6 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
 1. For Little Prince design: when flying, arms up or down?
    - Up = looks better, a bit more complicated for design.
    - Down = looks a bit weird, easier for design.
+   
    Decided to do arms up since the design can be done fast enough.
 2. 
