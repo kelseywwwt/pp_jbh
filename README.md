@@ -43,4 +43,4 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
 - asteroid.png:
 - star.png: *VectorStock*
 - bgStar.png: *made by me on pixilart.com*
-- bgLvl2
+- desert.png: *made by me on pixil.com*
