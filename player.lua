@@ -13,13 +13,6 @@ function Player:new()
 end
 
 function Player:update(dt)
-    -- Player directions: left and right
-    if love.keyboard.isDown("left") then
-        self.x = self.x - self.speed * dt
-    elseif love.keyboard.isDown("right") then
-        self.x = self.x + self.speed * dt
-    end
-
     -- Stop from going off-screen
     local window_width = love.graphics.getWidth()
     if self.x < 0 then
@@ -37,13 +30,21 @@ function Player:update(dt)
     if isFlying then
         self.image = self.flying
         self.y = self.y - self.speed * dt
+        
+        -- Player directions: left and right only if game starts
+        if love.keyboard.isDown("left") then
+            self.x = self.x - self.speed * dt
+        elseif love.keyboard.isDown("right") then
+            self.x = self.x + self.speed * dt
+        end
+
     else
         self.image = self.default
     end
 end
 
 function Player:draw()
-    love.graphics.translate(0, -self.y + 650)
+    love.graphics.translate(0, -player.y + 650)
     
     love.graphics.draw(self.image, self.x, self.y)
 end
