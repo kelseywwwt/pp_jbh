@@ -24,18 +24,23 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
    - Up = looks better, a bit more complicated for design.
    - Down = looks a bit weird, easier for design.
    
-   Decided to do arms up since the design can be done fast enough.
+   Do arms up since the design can be done fast enough.
 2. For my game title: keep Petit Prince or change to Little Prince?
 
-   Decided to keep Petit Prince for a french touch since I'm french.
+   Keep Petit Prince because I'm french.
+3. For levels background: design manually a background image or set a background color and just add decorations individually.
+
+    Set a background color(30, 28, 72) and add decorations manually.
+    It would be too complicated to use a Mario Bros. method.
+    My background is simple enough. 
 
 ### Sources:
-- petitprince(1 & 2).png: *inspired by RGZNSK on Behance and Ben Maden on Matter Solutions, made by me on pixilart.com*
+- petitprince(1 & 2).png + logo.png: *inspired by RGZNSK on Behance and Ben Maden on Matter Solutions, made by me on pixilart.com*
 - bird.png:
 - cloud.png:
 - satellite.png:
 - shootingStar.png:
 - asteroid.png:
 - star.png: *VectorStock*
-- bgStar
+- bgStar.png: *made by me on pixilart.com*
 - bgLvl2
