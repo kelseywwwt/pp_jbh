@@ -36,11 +36,8 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
 
 ### Sources:
 - petitprince(1 & 2).png + logo.png: *inspired by RGZNSK on Behance and Ben Maden on Matter Solutions, made by me on pixilart.com*
-- bird.png:
-- cloud.png:
-- satellite.png:
-- shootingStar.png:
 - asteroid.png:
 - star.png: *VectorStock*
 - bgStar.png: *made by me on pixilart.com*
 - desert.png: *made by me on pixil.com*
+- planetSix.png: *craiyon.com*
