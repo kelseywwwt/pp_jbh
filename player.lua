@@ -38,6 +38,12 @@ function Player:update(dt)
             self.x = self.x + self.speed * dt
         end
 
+        -- Stop flying at the end of lvl
+        if self.y < -850 * 6 then
+            self.image = self.default
+            self.y = -850 * 6
+        end
+
     else
         self.image = self.default
     end
