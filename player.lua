@@ -12,7 +12,7 @@ function Player:new()
     self.width = self.image:getWidth()
 end
 
-function Player:update(dt)
+function Player:update(dt, gameStarted)
     -- Stop from going off-screen
     local window_width = love.graphics.getWidth()
     if self.x < 0 then
@@ -21,9 +21,8 @@ function Player:update(dt)
         self.x = window_width - self.width
     end
 
-
     -- Space = start game = start flying
-    if love.keyboard.isDown("space") then
+    if gameStarted and love.keyboard.isDown("space") then
         isFlying = true
     end
 
