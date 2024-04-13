@@ -10,6 +10,9 @@ function Player:new()
     self.y = 650
     self.speed = 250 
     self.width = self.image:getWidth()
+    self.height = self.image:getHeight()
+
+    isFlying = false
 end
 
 function Player:update(dt, gameStarted)
@@ -39,10 +42,9 @@ function Player:update(dt, gameStarted)
 
         -- Stop flying at the end of lvl
         if self.y < -850 * 6 then
-            self.image = self.default
+            isFlying = false
             self.y = -850 * 6
         end
-
     else
         self.image = self.default
     end
@@ -52,4 +54,11 @@ function Player:draw()
     love.graphics.translate(0, -player.y + 650)
     
     love.graphics.draw(self.image, self.x, self.y)
+end
+
+function Player:reset()
+    self.x = 245 
+    self.y = 650 
+    self.image = self.default
+    isFlying = false
 end

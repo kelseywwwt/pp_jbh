@@ -7,7 +7,7 @@ function Background:new()
             table.insert(bgStars,
                 {
                     x = love.math.random(0, 550),
-                    y = love.math.random(0, -850 * 6),
+                    y = love.math.random(0, -850 * 7),
                     image = love.graphics.newImage("img/bgStar.png")
                 }
             )
@@ -28,7 +28,7 @@ end
 
 function Background:draw()
     -- Draw BG Stars randomly
-    for i, v in ipairs(bgStars) do 
+    for i,v in ipairs(bgStars) do 
         love.graphics.draw(v.image, v.x, v.y) 
     end
 
