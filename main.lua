@@ -14,10 +14,14 @@ function love.load()
     require "player"
     require "background"
     require "obstacle"
+    require "boost"
 
     player = Player()
     background = Background()
     obstacle = Obstacle()
+    boost = Boost()
+
+    score = 0
 end
 
 function love.update(dt) 
@@ -28,6 +32,7 @@ end
 function love.draw()
     love.graphics.print("x: " .. player.x, 10, 10)
     love.graphics.print("y: " .. player.y, 10, 30)
+    love.graphics.print("Score: " .. score, 490, 10)
 
     if gameStarted then
         -- Draw player
@@ -46,6 +51,14 @@ function love.draw()
         end
 
         -- Draw boosts
+        boost:draw()
+
+        for i,v in ipairs(stars) do
+            if checkCollision(boost, v.x, v.y) then
+                table.remove(stars, i)
+                score = score + 1
+            end
+        end
     else
         love.graphics.clear()
         
