@@ -6,10 +6,10 @@ function Boost:new()
     self.height = self.image:getHeight()
 
     stars = {}
-    for i=1,5 do 
+    for i=1,10 do 
         table.insert(stars,
             {
-                x = love.math.random(0, 550),
+                x = love.math.random(0, 510),
                 y = love.math.random(0, -850 * 5),
                 image = self.image
             }
@@ -17,11 +17,16 @@ function Boost:new()
     end
 end
 
-function Boost:update(dt)
-end
-
 function Boost:draw()
     for i,v in ipairs(stars) do
         love.graphics.draw(v.image, v.x, v.y)
     end
 end    
+
+function Boost:reset()
+    for i,v in ipairs(stars) do
+        table.remove(stars, i)
+    end
+
+    Boost:new()
+end

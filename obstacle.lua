@@ -12,7 +12,7 @@ function Obstacle:new()
                 x = 600,
                 y = love.math.random(0, -850 * 5),
                 appear = love.math.random(400, 700),
-                speed = 150,
+                speed = love.math.random(100, 200),
                 image = self.image
             }
         )
@@ -32,3 +32,11 @@ function Obstacle:draw()
         love.graphics.draw(v.image, v.x, v.y)
     end
 end    
+
+function Obstacle:reset()
+    for i,v in ipairs(asteroids) do
+        table.remove(asteroids, i)
+    end
+
+    Obstacle:new()
+end
