@@ -22,10 +22,6 @@ function Background:new()
         }    
 end
 
-function Background:update(dt)
-
-end
-
 function Background:draw()
     -- Draw BG Stars randomly
     for i,v in ipairs(bgStars) do 

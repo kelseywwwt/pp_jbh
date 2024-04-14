@@ -44,6 +44,7 @@ function Player:update(dt, gameStarted)
         if self.y < -850 * 6 then
             isFlying = false
             self.y = -850 * 6
+            gameWin = true
         end
     else
         self.image = self.default

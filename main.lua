@@ -4,11 +4,14 @@ function love.load()
 
     gameStarted = false
     gameOver = false
+    gameWin = false
     startButton = { x = 200, y = 650, width = 150, height = 70 }
+    winButton = { x = 200, y = 650, width = 150, height = 70 }
     restartButton = { x = 170, y = 650, width = 210, height = 70 }
     
     homeScreen = love.graphics.newImage("img/homeScreen.png")
     restartScreen = love.graphics.newImage("img/restartScreen.png")
+    winScreen = love.graphics.newImage("img/winScreen.png")
 
     Object = require "classic"
     require "player"
@@ -18,8 +21,8 @@ function love.load()
 
     player = Player()
     background = Background()
-    obstacle = Obstacle()
     boost = Boost()
+    obstacle = Obstacle()
 
     score = 0
 end
@@ -35,28 +38,27 @@ function love.draw()
     love.graphics.print("Score: " .. score, 490, 10)
 
     if gameStarted then
+        
         -- Draw player
         player:draw()
 
         -- Draw background
         background:draw()
 
-        -- Draw obstacles
-        obstacle:draw()
-
-        for i,v in ipairs(asteroids) do
-            if checkCollision(obstacle, v.x, v.y) then
-                gameOver = true
-            end
-        end
-
         -- Draw boosts
         boost:draw()
-
         for i,v in ipairs(stars) do
             if checkCollision(boost, v.x, v.y) then
                 table.remove(stars, i)
                 score = score + 1
+            end
+        end
+
+        -- Draw obstacles
+        obstacle:draw()
+        for i,v in ipairs(asteroids) do
+            if checkCollision(obstacle, v.x, v.y) then
+                gameOver = true
             end
         end
     else
@@ -67,13 +69,17 @@ function love.draw()
     end
 
     if gameOver then
-        love.graphics.clear()
-        
+        gameReset()
+
         -- Draw restart screen
         love.graphics.draw(restartScreen, 0, 0)
+    end
 
-        -- Reset to default player
-        player:reset()
+    if gameWin then
+        gameReset()
+
+        -- Draw win screen
+        love.graphics.draw(winScreen, 0, player.y - (810 - player.height))
     end
 end
 
@@ -91,6 +97,14 @@ function love.mousepressed(x, y, button)
                 -- Reset game state
                 gameStarted = true
                 gameOver = false
+            end
+        elseif gameWin then -- If game is won
+            if x >= winButton.x and x <= winButton.x + winButton.width and
+            y >= winButton.y and y <= winButton.y + winButton.height then
+                
+                -- Reset game state
+                gameStarted = true
+                gameWin = false
             end
         end
     end
@@ -111,4 +125,14 @@ function checkCollision(e, e_x, e_y)
         and player_left < e_right 
         and player_bottom > e_top 
         and player_top < e_bottom
+end
+
+function gameReset() -- Reset all
+    love.graphics.clear()
+        
+    player:reset()
+    boost:reset()
+    obstacle:reset()
+    
+    score = 0
 end
