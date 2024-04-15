@@ -8,20 +8,20 @@ function Player:new()
 
     self.x = 245
     self.y = 650
-    self.speed = 250 
+    self.speed = 250
+    self.acceleration = 20 
     self.width = self.image:getWidth()
     self.height = self.image:getHeight()
 
     isFlying = false
 end
 
-function Player:update(dt, gameStarted)
+function Player:update(dt, gameStarted, windowWidth)
     -- Stop from going off-screen
-    local window_width = love.graphics.getWidth()
     if self.x < 0 then
         self.x = 0
-    elseif self.x + self.width > window_width then
-        self.x = window_width - self.width
+    elseif self.x + self.width > windowWidth then
+        self.x = windowWidth - self.width
     end
 
     -- Space = start game = start flying
@@ -31,6 +31,8 @@ function Player:update(dt, gameStarted)
 
     if isFlying then
         self.image = self.flying
+
+        self.speed = self.speed + self.acceleration * dt
         self.y = self.y - self.speed * dt
         
         -- Player directions: left and right only if game starts
@@ -41,9 +43,9 @@ function Player:update(dt, gameStarted)
         end
 
         -- Stop flying at the end of lvl
-        if self.y < -850 * 6 then
+        if self.y < -windowWidth * 101 then
             isFlying = false
-            self.y = -850 * 6
+            self.y = -windowWidth * 101
             gameWin = true
         end
     else
@@ -60,6 +62,7 @@ end
 function Player:reset()
     self.x = 245 
     self.y = 650 
+    self.speed = 250
     self.image = self.default
     isFlying = false
 end

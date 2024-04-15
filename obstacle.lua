@@ -6,24 +6,16 @@ function Obstacle:new()
     self.height = self.image:getHeight()
 
     asteroids = {}
-    for i=1,5 do 
+    for i=1,100 do 
         table.insert(asteroids,
             {
-                x = 600,
-                y = love.math.random(0, -850 * 5),
-                appear = love.math.random(400, 700),
+                x = love.math.random(0, windowWidth),
+                y = love.math.random(0, -windowHeight * 100),
+                appear = 700,
                 speed = love.math.random(100, 200),
                 image = self.image
             }
         )
-    end
-end
-
-function Obstacle:update(dt, player_y)
-    for i,v in ipairs(asteroids) do
-        if v.y > player_y - v.appear then
-            v.x = v.x - v.speed * dt
-        end
     end
 end
 

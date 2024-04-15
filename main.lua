@@ -1,6 +1,16 @@
 function love.load()
     love.window.setMode(550, 850) -- Vertical window
+    windowWidth = love.graphics.getWidth()
+    windowHeight = love.graphics.getHeight()
+
     love.graphics.setBackgroundColor(30/255, 28/255, 72/255) -- BG color to dark blue
+
+    song = love.audio.newSource("audio/song.mp3", "stream")
+    song:setLooping(true)
+    song:play()
+
+    starSfx = love.audio.newSource("audio/starSfx.mp3", "static")
+    asteroidSfx = love.audio.newSource("audio/asteroidSfx.mp3", "static")
 
     gameStarted = false
     gameOver = false
@@ -28,8 +38,7 @@ function love.load()
 end
 
 function love.update(dt) 
-    player:update(dt, gameStarted, gameOver)
-    obstacle:update(dt, player.y)
+    player:update(dt, gameStarted, windowWidth)
 end
 
 function love.draw()
@@ -38,7 +47,6 @@ function love.draw()
     love.graphics.print("Score: " .. score, 490, 10)
 
     if gameStarted then
-        
         -- Draw player
         player:draw()
 
@@ -49,6 +57,7 @@ function love.draw()
         boost:draw()
         for i,v in ipairs(stars) do
             if checkCollision(boost, v.x, v.y) then
+                starSfx:play()
                 table.remove(stars, i)
                 score = score + 1
             end
@@ -57,7 +66,8 @@ function love.draw()
         -- Draw obstacles
         obstacle:draw()
         for i,v in ipairs(asteroids) do
-            if checkCollision(obstacle, v.x, v.y) then
+            if checkCollision(obstacle, v.x, v.y) then 
+                asteroidSfx:play()               
                 gameOver = true
             end
         end
@@ -73,6 +83,8 @@ function love.draw()
 
         -- Draw restart screen
         love.graphics.draw(restartScreen, 0, 0)
+
+        love.graphics.print("Score: " .. score, 245, 625)
     end
 
     if gameWin then
@@ -80,6 +92,9 @@ function love.draw()
 
         -- Draw win screen
         love.graphics.draw(winScreen, 0, player.y - (810 - player.height))
+
+        love.graphics.print("Score: " .. score, 245, 625)
+
     end
 end
 
@@ -89,6 +104,7 @@ function love.mousepressed(x, y, button)
             if x >= startButton.x and x <= startButton.x + startButton.width and
                y >= startButton.y and y <= startButton.y + startButton.height then
                 gameStarted = true
+                score = 0
             end
         elseif gameOver then -- If game is over
             if x >= restartButton.x and x <= restartButton.x + restartButton.width and
@@ -97,6 +113,7 @@ function love.mousepressed(x, y, button)
                 -- Reset game state
                 gameStarted = true
                 gameOver = false
+                score = 0
             end
         elseif gameWin then -- If game is won
             if x >= winButton.x and x <= winButton.x + winButton.width and
@@ -105,6 +122,7 @@ function love.mousepressed(x, y, button)
                 -- Reset game state
                 gameStarted = true
                 gameWin = false
+                score = 0
             end
         end
     end
@@ -133,6 +151,4 @@ function gameReset() -- Reset all
     player:reset()
     boost:reset()
     obstacle:reset()
-    
-    score = 0
 end

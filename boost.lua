@@ -6,11 +6,11 @@ function Boost:new()
     self.height = self.image:getHeight()
 
     stars = {}
-    for i=1,10 do 
+    for i=1,100 do 
         table.insert(stars,
             {
                 x = love.math.random(0, 510),
-                y = love.math.random(0, -850 * 5),
+                y = love.math.random(0, -windowWidth * 100),
                 image = self.image
             }
         )

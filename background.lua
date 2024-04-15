@@ -3,11 +3,11 @@ Background = Object:extend()
 function Background:new()
         -- BG Stars
         bgStars = {}
-        for i=1,50 do 
+        for i=1,500 do 
             table.insert(bgStars,
                 {
                     x = love.math.random(0, 550),
-                    y = love.math.random(0, -850 * 7),
+                    y = love.math.random(0, -windowWidth * 101),
                     image = love.graphics.newImage("img/bgStar.png")
                 }
             )
@@ -30,7 +30,4 @@ function Background:draw()
 
     -- Draw BG Desert ground for starting point
     love.graphics.draw(desert, -1, 750)
-
-    -- Draw planet 6
-    love.graphics.draw(planet.six, -245, -5200)
 end
