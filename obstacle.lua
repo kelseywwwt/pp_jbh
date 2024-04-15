@@ -1,7 +1,7 @@
 Obstacle = Object:extend()
 
 function Obstacle:new()
-    self.image = love.graphics.newImage("img/asteroid1.png")
+    self.image = love.graphics.newImage("img/asteroid.png")
     self.width = self.image:getWidth()
     self.height = self.image:getHeight()
 

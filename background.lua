@@ -15,12 +15,7 @@ function Background:new()
     
         -- BG Desert (start point)
         desert = love.graphics.newImage("img/desert.png")
-    
-        -- Planets/checkpoints
-        planet = {
-            six = love.graphics.newImage("img/planetSix.png")
-        }    
-end
+    end
 
 function Background:draw()
     -- Draw BG Stars randomly
