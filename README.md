@@ -7,16 +7,17 @@ A simple race-to-the-end game inspired by the Little Prince, in french *Le Petit
 
 User plays as the Little Prince. <br>
 The game starts in the desert, where the Little Prince decides to go back on his asteroid, for his rose. <br>
-Flying up in the sky and eventually travelling the Universe once again, but this time in reversed. <br>
-Little Prince will get to meet his previous encounters again! <br>
-Clouds and stars can help Little Prince travel faster but he should be careful of birds, satellites and asteroids on his way back.
+Flying up in the sky and eventually travelling the Universe once again <br>
+Stars can be collected but Little Prince should be careful of asteroids on his way back.
 
 ### Files Description:
+- background.lua: this is a file for background decorations (background stars, desert)
+- boost.lua: this is a file for stars (to collect)
+- classic.lua: this is a library for classes
+- conf.lua: this is the configuration file (game title, icon)
 - main.lua: this is the main file
-- entity.lua: this is a file for all entities (Little Prince, birds, clouds, satellites, stars, asteroids)  for the similar behaviors they share.
-- petitprince.lua: this is a file for the little prince.
-- obstacle.lua: this is a file for all obstacles, entities to avoid (birds, satellites, asteroids)
-- boost.lua: this is a file for all boosts, entities to collect (clouds, stars)
+- obstacle.lua: this is a file for asteroids (to avoid)
+- player.lua: this is a file for the little prince.
 
 ### Design Debates:
 1. For Little Prince design: when flying, arms up or down?
@@ -27,11 +28,20 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
 2. For my game title: keep Petit Prince or change to Little Prince?
 
    Keep 'Petit Prince' because I'm french.
-3. For levels background: design manually a background image or set a background color and just add decorations individually.
+3. For levels background: design manually a background image or set a background color and just add decorations individually?
 
     Set a background color(30, 28, 72) and add decorations manually.
     It would be too complicated to use a Mario Bros. method.
     My background is simple enough. 
+4. For levels: game in levels or infinite?
+
+   Infinite game (technically finite but the end is far).
+   Levels are too complicated for the little time I have left.
+   This also means I gave up the different planets pictured in the book.
+5. For obstacles: asteroids move or static? 1 or 2 kinds of asteroids?
+
+   Asteroids are static. It's more fun and difficult in this long game.
+   Only one asteroid. Too complicated to add another one.
 
 ### Difficulties:
 - Design:
@@ -48,12 +58,17 @@ Clouds and stars can help Little Prince travel faster but he should be careful o
    I have difficulties making the game work while keeping the appearance of the game good.
 
 ## Sources:
-- asteroid1.png: *Sarah Reddington on kindpng.com*
-- asteroid2.png: *Anonymous on pixilart.com*
+Images:
+- asteroid.png: *Sarah Reddington on kindpng.com*
 - bgStar.png: *me on pixilart.com*
 - desert.png: *me on pixilart.com*
 - homescreen.png: *me on pixilart.com*
 - petitprince(1 & 2).png + logo.png: *inspired by RGZNSK on Behance and Ben Maden on Matter Solutions, me on pixilart.com*
-- planetSix.png: *craiyon.com*
 - restartScreen.png: *me on pixilart.com*
 - star.png: *Support Ivy on Pinterest*
+- winScreen.png: *me on pixilart.com*
+
+Audio:
+- asteroidSfx.mp3: *EdR on pixabay.com: Video Game Hit Noise 001*
+- song.mp3: *JuliusH on pixabay.com: Interstellar - Science-Fiction Sounds*
+- starSfx.mp3: *Pixabay on pixabay.com: scale e6*
