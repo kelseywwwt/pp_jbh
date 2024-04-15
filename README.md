@@ -8,16 +8,16 @@ A simple race-to-the-end game inspired by the Little Prince, in french *Le Petit
 User plays as the Little Prince. <br>
 The game starts in the desert, where the Little Prince decides to go back on his asteroid, for his rose. <br>
 Flying up in the sky and eventually travelling the Universe once again <br>
-Stars can be collected but Little Prince should be careful of asteroids on his way back.
+Stars can be collected but be careful of asteroids on his way back.
 
 ### Files Description:
-- background.lua: this is a file for background decorations (background stars, desert)
-- boost.lua: this is a file for stars (to collect)
-- classic.lua: this is a library for classes
-- conf.lua: this is the configuration file (game title, icon)
-- main.lua: this is the main file
-- obstacle.lua: this is a file for asteroids (to avoid)
-- player.lua: this is a file for the little prince.
+- background.lua: creates and draws on canvas background decorations (background stars and desert);
+- boost.lua: creates and draws stars to collect + a reset function when the game is over;
+- classic.lua: this is an external library for classes;
+- conf.lua: this is the configuration file (game title, icon);
+- main.lua: sets the games parameters, draws the game for different situations (start of the app, victory/death of the player, checks collision, handles the scoring and button clicks and resets the whole game);
+- obstacle.lua: creates and draws asteroids to avoid + a reset function when the game is over;
+- player.lua: creates and draws 'Petit Prince'/the player, handles the player moving left and right, makes the player fly up and faster as the game progresses, stops the player when reaching the end of the level + a reset function when the game is over.
 
 ### Design Debates:
 1. For Little Prince design: when flying, arms up or down?
@@ -42,6 +42,9 @@ Stars can be collected but Little Prince should be careful of asteroids on his w
 
    Asteroids are static. It's more fun and difficult in this long game.
    Only one asteroid. Too complicated to add another one.
+6. For position: keep the x, y position at the top left or no?
+
+   Keep them to see the payer's progress.
 
 ### Difficulties:
 - Design:
