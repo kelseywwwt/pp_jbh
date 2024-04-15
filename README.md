@@ -1,6 +1,6 @@
 # Petit Prince: Journey Back Home
 
-### Video Demo: <url>
+### Video Demo: [Petit Prince: Journey Back Home - CS50x Final Project](https://youtu.be/WDnDYNg-lX0)
 
 ### Game Description:
 A simple race-to-the-end game inspired by the Little Prince, in french *Le Petit Prince*, from Antoine de Saint-Exupéry.
