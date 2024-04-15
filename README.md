@@ -1,6 +1,6 @@
 # Petit Prince: Journey Back Home
 
-### Video Demo: [Petit Prince: Journey Back Home - CS50x Final Project](https://youtu.be/WDnDYNg-lX0)
+### Video Demo: [Petit Prince: Journey Back Home - CS50x Final Project](https://youtu.be/3H5KKiZ73uU)
 
 ### Game Description:
 A simple race-to-the-end game inspired by the Little Prince, in french *Le Petit Prince*, from Antoine de Saint-Exupéry.
@@ -75,3 +75,5 @@ Audio:
 - asteroidSfx.mp3: *EdR on pixabay.com: Video Game Hit Noise 001*
 - song.mp3: *JuliusH on pixabay.com: Interstellar - Science-Fiction Sounds*
 - starSfx.mp3: *Pixabay on pixabay.com: scale e6*
+
+Video made with Canva
